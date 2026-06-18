@@ -47,7 +47,12 @@ const namePool = [
   "phamkhanh",
   "yennhi",
   "ductri",
-  "maianh"
+  "maianh",
+  "boday888",
+  "tuoilondanhvai",
+  "codonlaanh",
+  "anhoiemday",
+  "maylaconcho"
 ];
 
 const timeOffsets = [3, 5, 8, 12, 16, 22, 35, 48, 65, 90, 120];
