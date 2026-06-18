@@ -122,7 +122,7 @@ function generateRewardNumberFromSetOnly() {
 
 function generateHistoryReward() {
   const base = generateRewardNumberFromSetOnly();
-  return base * 1000 + 888;
+  return base ;
 }
 
 function generatePromoCode() {
