@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SC88 - Nhập thưởng phong bao</title>
+
+  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)" />
+  <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin />
+  <link
+    href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap)"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/variables.css" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="layout">
+      <aside class="winners-panel">
+        <div id="historyList" class="winners-panel__list"></div>
+      </aside>
+
+      <section class="center-stage">
+        <div class="brand">
+          <img
+            class="brand__logo-image"
+            src="./assets/images/logo-sc88.png"
+            alt="SC88"
+          />
+          <h1 class="brand__title">NHẬP THƯỞNG PHONG BAO</h1>
+        </div>
+
+        <div class="reward-grid">
+          <button class="reward-card" type="button" data-index="1" aria-label="Thẻ thưởng 1"></button>
+          <button class="reward-card" type="button" data-index="2" aria-label="Thẻ thưởng 2"></button>
+          <button class="reward-card" type="button" data-index="3" aria-label="Thẻ thưởng 3"></button>
+          <button class="reward-card" type="button" data-index="4" aria-label="Thẻ thưởng 4"></button>
+          <button class="reward-card" type="button" data-index="5" aria-label="Thẻ thưởng 5"></button>
+          <button class="reward-card" type="button" data-index="6" aria-label="Thẻ thưởng 6"></button>
+        </div>
+
+        <button
+          id="openUsernameBtn"
+          class="cta-button"
+          type="button"
+          aria-label="Nhập tên tài khoản nhận thưởng"
+        ></button>
+      </section>
+
+      <aside class="character-stage">
+        <img
+          class="character-stage__image"
+          src="./assets/images/right-girl.png"
+          alt="Nhân vật SC88"
+        />
+      </aside>
+    </section>
+  </main>
+
+  <div id="usernameModal" class="modal" aria-hidden="true">
+    <div class="modal__overlay"></div>
+    <div class="modal__dialog modal__dialog--form" role="dialog" aria-modal="true">
+      <button id="closeUsernameModal" class="modal__close" type="button" aria-label="Đóng">
+        ×
+      </button>
+
+      <h2 class="modal__title modal__title--dark">Nhập TÊN TÀI KHOẢN nhận thưởng</h2>
+
+      <input
+        id="usernameInput"
+        class="modal__input"
+        type="text"
+        placeholder="nhập ở đây"
+        autocomplete="off"
+      />
+
+      <button id="confirmUsernameBtn" class="modal__action modal__action--orange" type="button">
+        OK
+      </button>
+    </div>
+  </div>
+
+  <div id="codeModal" class="modal" aria-hidden="true">
+    <div class="modal__overlay"></div>
+    <div class="modal__dialog modal__dialog--form" role="dialog" aria-modal="true">
+      <button id="closeCodeModal" class="modal__close" type="button" aria-label="Đóng">
+        ×
+      </button>
+
+      <h2 class="modal__title modal__title--dark">Nhập MÃ CODE nhận thưởng</h2>
+
+      <input
+        id="codeInput"
+        class="modal__input"
+        type="text"
+        placeholder="nhập ở đây"
+        autocomplete="off"
+      />
+
+      <button id="confirmCodeBtn" class="modal__action modal__action--orange" type="button">
+        TIẾP TỤC
+      </button>
+    </div>
+  </div>
+
+  <div id="rewardModal" class="modal reward-modal" aria-hidden="true">
+    <div class="modal__overlay modal__overlay--dark"></div>
+
+    <div class="reward-modal__dialog" role="dialog" aria-modal="true">
+      <img
+        class="reward-modal__light"
+        src="./assets/images/light.png"
+        alt=""
+      />
+
+      <img
+        class="reward-modal__banner-image"
+        src="./assets/images/chuc-mung.png"
+        alt="Chúc mừng"
+      />
+
+      <div class="reward-modal__panel">
+        <div class="reward-modal__content">
+          <div class="reward-modal__title">BẠN NHẬN ĐƯỢC</div>
+
+          <div id="rewardPoints" class="reward-modal__points">888.888</div>
+
+          <div class="reward-modal__subtitle">Điểm thưởng</div>
+
+          <div class="reward-modal__meta">
+            <div class="reward-modal__row">
+              <span>Tài khoản</span>
+              <strong id="txUsername">demo_user</strong>
+            </div>
+            <div class="reward-modal__row">
+              <span>Mã giao dịch</span>
+              <strong id="txCode">TXABCD1234</strong>
+            </div>
+            <div class="reward-modal__row">
+              <span>Thời gian</span>
+              <strong id="txTime">2026/01/05 20:47:51</strong>
+            </div>
+          </div>
+        </div>
+
+        <button
+          id="closeRewardModal"
+          class="reward-modal__confirm"
+          type="button"
+          aria-label="Xác nhận"
+        >
+          <img src="./assets/images/xac-nhan.png" alt="Xác nhận" />
+          <span class="reward-modal__confirm-label">Xác nhận</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <button
+  id="donateFab"
+  class="donate-fab"
+  type="button"
+  aria-label="Ủng hộ"
+>
+  Ủng hộ
+</button>
+
+<div id="donateModal" class="modal donate-modal" aria-hidden="true">
+  <div class="modal__overlay"></div>
+
+  <div class="donate-modal__dialog" role="dialog" aria-modal="true">
+    <button
+      id="closeDonateModal"
+      class="modal__close donate-modal__close"
+      type="button"
+      aria-label="Đóng"
+    >
+      ×
+    </button>
+
+    <div class="donate-modal__title">Cho tiền OWDR CHANNHU uống sữa đi</div>
+
+    <img
+      class="donate-modal__qr"
+      src="./assets/images/qr.jpg"
+      alt="Mã QR ủng hộ"
+    />
+  </div>
+</div>
+
+
+  <script src="./assets/js/data.js"></script>
+  <script src="./assets/js/utils.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

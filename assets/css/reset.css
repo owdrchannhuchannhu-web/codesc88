@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+button,
+input {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+input {
+  border: 0;
+  outline: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}

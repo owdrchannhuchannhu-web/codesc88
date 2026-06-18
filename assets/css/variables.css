@@ -1,0 +1,17 @@
+:root {
+  --page-min-width: 1440px;
+  --page-min-height: 900px;
+
+  --color-orange: #ff6a00;
+  --color-orange-2: #ff8c1f;
+  --color-gold: #ffd55a;
+  --color-red: #c40000;
+  --color-red-dark: #7a0000;
+  --color-brown: #733000;
+  --color-white: #ffffff;
+  --color-cream: #fff8dd;
+  --color-text-dark: #111111;
+
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.18);
+  --shadow-strong: 0 20px 50px rgba(0, 0, 0, 0.24);
+}
