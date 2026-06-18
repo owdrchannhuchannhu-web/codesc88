@@ -25,7 +25,7 @@ const closeDonateModal = document.getElementById("closeDonateModal");
 const rewardCards = Array.from(document.querySelectorAll(".reward-card"));
 
 const REWARD_VALUES = [18, 28, 88, 188, 528];
-const AUTO_CODE_DELAY = 3000;
+const AUTO_CODE_DELAY = 2000;
 
 const namePool = [
   "chanhnu",
